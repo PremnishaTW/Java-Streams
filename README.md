@@ -1,2 +1,2 @@
-# Java-Streams
+# Java Streams
 Java Streams Example
