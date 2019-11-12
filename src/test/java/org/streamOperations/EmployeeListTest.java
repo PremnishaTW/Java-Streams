@@ -1,6 +1,7 @@
 package org.streamOperations;
 
 import com.github.javafaker.Faker;
+import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -32,13 +33,22 @@ class EmployeeListTest {
     }
 
     @Test
+    @Ignore
     public void shouldReturnAllEmployeesForGivenRole() {
         List<Employee> allEmployeesWithRoleDev = employeeList.getAllEmployeesForRole(EmployeeRole.DEV);
         assertEquals(allEmployeesWithRoleDev.size(), 2);
     }
 
     @Test
+    @Ignore
     public void shouldReturnBooleanIfEmployeeForGivenRoleIsPresent() {
         assertTrue(employeeList.isEmployeeWithRolePresent(EmployeeRole.DEV));
+    }
+
+    @Test
+    @Ignore
+    public void shouldReturnListOfEmployeesBasedOnLimit() {
+        List<Employee> employeeListByLimit = employeeList.getEmployeeListByLimit(2);
+        assertEquals(employeeListByLimit.size(), 2);
     }
 }

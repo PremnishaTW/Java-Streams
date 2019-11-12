@@ -6,7 +6,6 @@ import java.util.stream.Stream;
 
 public class EmployeeList {
     private List<Employee> employeeList;
-    private Stream<Employee> employeeStream;
 
     public EmployeeList(List<Employee> employeeList) {
         this.employeeList = employeeList;
@@ -28,5 +27,9 @@ public class EmployeeList {
      */
     public boolean isEmployeeWithRolePresent(EmployeeRole role) {
         return employeeList.stream().anyMatch(employee -> employee.getRole() == role);
+    }
+
+    public List<Employee> getEmployeeListByLimit(Integer limit) {
+        return employeeList.stream().limit(limit).collect(Collectors.toList());
     }
 }
