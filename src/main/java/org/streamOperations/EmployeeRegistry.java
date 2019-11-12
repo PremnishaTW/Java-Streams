@@ -1,8 +1,11 @@
+package org.streamOperations;
+
 import com.github.javafaker.Faker;
 
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class EmployeeRegistry {
 
@@ -18,5 +21,8 @@ public class EmployeeRegistry {
 
         List<Employee> list = Arrays.asList(employee_1, employee_2, employee_3, employee_4, employee_5);
         EmployeeList employeeList = new EmployeeList(list);
+
+        // Create Employee Stream (Stream.of)
+        Stream<Employee> employeeStream = Stream.of(employee_1, employee_2, employee_3, employee_4, employee_5);
     }
 }
